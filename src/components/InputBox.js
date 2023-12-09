@@ -5,7 +5,7 @@ export default function InputBox(props) {
   return (
     <>
       <TextField
-        id="outlined-basic"
+        id={props.idname}
         label={props.inputname}
         variant="filled"
         sx={{ backgroundColor: "white", margin: "10px" }}

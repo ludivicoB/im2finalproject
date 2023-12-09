@@ -1,6 +1,6 @@
-import InputBox from "./components/InputBox";
+import InputBox from "../components/InputBox";
 import "./App.css";
-import ButtonComp from "./components/Button";
+import ButtonComp from "../components/Button";
 function UserRegister() {
   // const [users, setUsers] = useState([]);
   // useEffect(() => {

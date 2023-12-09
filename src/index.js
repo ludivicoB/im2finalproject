@@ -18,7 +18,7 @@ root.render(
       <UserProvider>
         <Routes>
           <Route path="/register" element={<UserRegister />} />
-          <Route path="/login" element={<UserLogin />} />
+          <Route path="/" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/profile" element={<UserProfile />} />
         </Routes>

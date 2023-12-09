@@ -3,6 +3,7 @@ import "./UserProfile.css";
 import { useState } from "react";
 import { useUser } from "../UserProvider";
 import axios from "axios";
+import NavBar from "../components/NavBar";
 export default function UserProfile() {
   const { user } = useUser();
   const [defaultPass, setDefaultPass] = useState(user.password);
@@ -42,6 +43,7 @@ export default function UserProfile() {
   };
   return (
     <>
+      <NavBar />
       <div className="userprofile-container">
         <div className="row">
           <p>Firstname</p>

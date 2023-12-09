@@ -3,11 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import UserRegister from "./login/UserRegister";
 import reportWebVitals from "./reportWebVitals";
+import UserLogin from "./login/UserLogin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserRegister />
+    {/* <UserLogin /> */}
   </React.StrictMode>
 );
 

@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 export default function ButtonComp(props) {
   return (
     <>
-      <Button variant="contained" sx={{ margin: "10px" }}>
+      <Button variant="contained" sx={{ margin: "10px" }} onClick={props.click}>
         {props.buttonname}
       </Button>
     </>

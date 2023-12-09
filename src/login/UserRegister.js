@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import InputBox from "../components/InputBox";
 import "./App.css";
 import ButtonComp from "../components/Button";
@@ -16,6 +17,23 @@ function UserRegister() {
         console.log(err);
       });
   }, []);
+
+  const signup = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/users', {
+        firstname: document.getElementById("firstname").value,
+        lastname: document.getElementById("lastname").value,
+        password: document.getElementById("password").value,
+        email: document.getElementById("email").value,
+      });
+      console.log('Registration successful:', response.data);
+      // Redirect or show a success message as needed
+      alert('Registration successful');
+    } catch (error) {
+      console.error('Error during registration:', error);
+      // Handle registration failure, show error message, etc.
+    }
+  }
   return (
     <>
       <div className="container">
@@ -37,7 +55,7 @@ function UserRegister() {
               inputtype="password"
             />
             <br />
-            <ButtonComp buttonname="Submit" />
+            <ButtonComp buttonname="Submit" click={signup} />
             <br />
           </div>
         </div>

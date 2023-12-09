@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import UserLogin from "./login/UserLogin";
 import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./UserProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,11 +14,13 @@ root.render(
     {/* <UserRegister /> */}
     {/* <UserLogin /> */}
     <BrowserRouter>
-      <Routes>
-        <Route path="/register" element={<UserRegister />} />
-        <Route path="/login" element={<UserLogin />} />
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
+      <UserProvider>
+        <Routes>
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

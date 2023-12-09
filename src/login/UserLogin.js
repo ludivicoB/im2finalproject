@@ -4,8 +4,11 @@ import "./App.css";
 import ButtonComp from "../components/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useUser } from "../UserProvider";
+import { useState, useEffect } from "react";
 export default function UserLogin() {
+  const { login } = useUser();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const handleLogIn = async () => {
     if (
@@ -29,11 +32,11 @@ export default function UserLogin() {
 
         if (user) {
           // Login successful
-          alert("Login successful");
+          login(user);
+          setIsLoggedIn(true);
           console.log("User logged in:", user);
-          navigate("/home");
         } else {
-          alert("Invalid email or password");
+          alert("Invalid username or password");
           // Handle invalid login (show error message, etc.)
         }
       } catch (error) {
@@ -45,6 +48,13 @@ export default function UserLogin() {
       return;
     }
   };
+  useEffect(() => {
+    // Check if registration is successful
+    if (isLoggedIn) {
+      // Redirect or show a success message as needed
+      navigate("/home");
+    }
+  }, [isLoggedIn]);
   return (
     <>
       <div className="container">

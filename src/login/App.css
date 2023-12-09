@@ -4,6 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url('https://www.herofincorp.com/public/admin_assets/upload/blog/64b91a06ab1c8_food%20business%20ideas.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .flexcenter{
@@ -13,10 +17,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('https://www.herofincorp.com/public/admin_assets/upload/blog/64b91a06ab1c8_food%20business%20ideas.webp');
 }
 .box{
   background-color: rgba(0, 0, 0, 0.818);
   padding: 50px;
   border-radius: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
 }

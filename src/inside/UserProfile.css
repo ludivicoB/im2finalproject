@@ -1,0 +1,15 @@
+.row{
+    /* display: flex; */
+    text-align: center;
+}
+.info-box{
+    text-align: center;
+    height: 40px;
+}
+.userprofile-changebtn{
+    width: 20px;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: -25px;
+}

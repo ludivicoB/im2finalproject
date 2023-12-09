@@ -7,6 +7,7 @@ import UserLogin from "./login/UserLogin";
 import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./UserProvider";
+import UserProfile from "./inside/UserProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
           <Route path="/register" element={<UserRegister />} />
           <Route path="/login" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Routes>
       </UserProvider>
     </BrowserRouter>

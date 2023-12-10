@@ -8,7 +8,7 @@ import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./UserProvider";
 import UserProfile from "./inside/UserProfile";
-
+import RecipeList from "./inside/RecipeList";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -21,6 +21,7 @@ root.render(
           <Route path="/" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/recipelist" element={<RecipeList />} />
         </Routes>
       </UserProvider>
     </BrowserRouter>

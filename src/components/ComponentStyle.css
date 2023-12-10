@@ -1,0 +1,18 @@
+.viewbtn{
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(29, 29, 106);
+    color: white;
+    border-radius: 5px;
+}
+.viewbtn:hover{
+    background-color: rgb(38, 38, 143);
+    color: white;
+    transition: 0.3s;
+    width: 150px;
+}
+.viewbtn:not(:hover){
+    transition: 0.5s;
+}

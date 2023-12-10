@@ -25,3 +25,16 @@
   padding-left: 100px;
   padding-right: 100px;
 }
+.create{
+  margin-right: 10px;
+  padding: 0px;
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+  color: gold;
+  cursor: pointer;
+  float: right;
+}
+.create:hover{
+  text-decoration: underline;
+  
+}

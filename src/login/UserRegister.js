@@ -71,7 +71,11 @@ function UserRegister() {
               inputtype="password"
             />
             <br />
-            <ButtonComp buttonname="Submit" click={signup} />
+            <button className="create" onClick={() => navigate("/")}>
+              Signup
+            </button>
+            <br />
+            <ButtonComp buttonname="Register" click={signup} />
             <br />
           </div>
         </div>

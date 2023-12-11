@@ -8,6 +8,8 @@ import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./UserProvider";
 import UserProfile from "./inside/UserProfile";
+import DisplayRecipe from "./inside/DisplayRecipe";
+import EditRecipe from "./inside/EditRecipe";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +23,8 @@ root.render(
           <Route path="/" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/DisplayRecipe" element={<DisplayRecipe />} />
+          <Route path="/EditRecipe" element={<EditRecipe />} />
         </Routes>
       </UserProvider>
     </BrowserRouter>

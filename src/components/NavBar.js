@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useUser } from "../UserProvider";
-const pages = ["Create Recipe", "Home"];
+const pages = ["Create Recipe", "Display Recipe", "Home"];
 const settings = ["User Name", "Profile", "Logout"];
 
 function getPagePath(page) {
@@ -22,6 +22,8 @@ function getPagePath(page) {
       return "/home";
     case "Create Recipe":
       return "/home";
+      case "Display Recipe":
+        return "/DisplayRecipe";
     // Add more cases for additional pages
     default:
       return `/${page.replace(/\s+/g, "-")}`;

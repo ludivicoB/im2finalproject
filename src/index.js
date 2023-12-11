@@ -8,7 +8,7 @@ import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./UserProvider";
 import UserProfile from "./inside/UserProfile";
-import DisplayRecipe from "./inside/DisplayRecipe";
+import RecipeList from "./inside/RecipeList";import DisplayRecipe from "./inside/DisplayRecipe";
 import EditRecipe from "./inside/EditRecipe";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -25,6 +25,7 @@ root.render(
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/DisplayRecipe" element={<DisplayRecipe />} />
           <Route path="/EditRecipe" element={<EditRecipe />} />
+          <Route path="/recipelist" element={<RecipeList />} />
         </Routes>
       </UserProvider>
     </BrowserRouter>

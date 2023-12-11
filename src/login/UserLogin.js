@@ -68,7 +68,11 @@ export default function UserLogin() {
               inputtype="password"
             />
             <br />
-            <ButtonComp buttonname="Submit" click={handleLogIn} />
+            <button className="create" onClick={() => navigate("/register")}>
+              No Account?
+            </button>
+            <br />
+            <ButtonComp buttonname="Login" click={handleLogIn} />
           </div>
         </div>
       </div>

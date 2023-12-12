@@ -35,7 +35,7 @@ export default function RecipeList() {
               />
             ))
           ) : (
-            <p>Hello</p>
+            <p>YOU HAVE NOT ADDED ANY RECIPES YET</p>
           )}
         </div>
       </div>

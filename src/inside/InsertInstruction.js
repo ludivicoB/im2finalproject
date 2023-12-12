@@ -1,0 +1,73 @@
+import React from "react";
+import "./InsertInstruction.css";
+import NavBar from "../components/NavBar";
+import { useUser } from "../UserProvider";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+export default function InsertInstruction() {
+  const { recipe } = useUser();
+  const navigate = useNavigate();
+  const handleInsert = () => {
+    const stepnumber = document.getElementById("stepnumber").value;
+    const description = document.getElementById("description").value;
+    if (stepnumber === "" || description === "") {
+      alert("Please fill all the fields");
+      return;
+    }
+    axios
+      .post("http://localhost:5000/recipe/instructions", {
+        recipeid: recipe.id,
+        stepnum: stepnumber,
+        description: description,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    const confirmMore = window.confirm(
+      "INSTRUCTION WAS ADDED. Do you want to add more?"
+    );
+    if (confirmMore) {
+      window.location.reload();
+    } else {
+      alert("RECIPE CREATED. NOW REDIRECTING TO HOME PAGE");
+      setTimeout(() => {
+        navigate("/home");
+      }, 1500);
+    }
+  };
+  return (
+    <>
+      <NavBar />
+      <div className="insertinstruction-body">
+        <div className="insertinstruction-form-container">
+          <h1 className="insertinstruction-title">Insert an Instruction</h1>
+          <div className="insertinstruction-line">
+            <div className="insertinstruction-line">
+              <p>Step Number</p>
+              <input
+                type="number"
+                className="insertinstruction-input"
+                id="stepnumber"
+              />
+            </div>
+            <div className="insertinstruction-line">
+              <p>Description</p>
+              <textarea
+                type="text"
+                className="insertinstruction-inputt"
+                id="description"
+              />
+            </div>
+          </div>
+          <hr className="insertinstruction-hr" />
+          <button className="insertinstruction-button" onClick={handleInsert}>
+            Add Instruction
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -8,10 +8,13 @@ import HomePage from "./inside/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./UserProvider";
 import UserProfile from "./inside/UserProfile";
-import RecipeList from "./inside/RecipeList";import DisplayRecipe from "./inside/DisplayRecipe";
+import RecipeList from "./inside/RecipeList";
+import DisplayRecipe from "./inside/DisplayRecipe";
 import EditRecipe from "./inside/EditRecipe";
 import EditIngredient from "./inside/EditIngredient";
-
+import CreateRecipe from "./inside/CreateRecipe";
+import InsertIngredient from "./inside/InsertIngredient";
+import InsertInstruction from "./inside/InsertInstruction";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -24,9 +27,15 @@ root.render(
           <Route path="/" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/createRecipe" element={<CreateRecipe />} />
+          <Route path="/InsertIngredient" element={<InsertIngredient />} />
+          <Route path="/InsertInstruction" element={<InsertInstruction />} />
           <Route path="/DisplayRecipe/:recipeId" element={<DisplayRecipe />} />
           <Route path="/EditRecipe/:recipeId" element={<EditRecipe />} />
-          <Route path="/EditIngredient/:recipeId/:ingredientId" element={<EditIngredient />} />
+          <Route
+            path="/EditIngredient/:recipeId/:ingredientId"
+            element={<EditIngredient />}
+          />
           <Route path="/recipelist" element={<RecipeList />} />
         </Routes>
       </UserProvider>

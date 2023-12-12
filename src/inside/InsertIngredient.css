@@ -1,0 +1,56 @@
+.inseringredient-body{
+    display: flex;
+    justify-content: center;
+}
+.insertingredient-title{
+    font-size: 40px;
+    text-align: center;
+}
+.insertingredient-form-container{
+    text-align: center;
+}
+.insertingredient-label{
+    font-size: 20px;
+}
+.insertingredient-input{
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+}
+.insertingredient-input-twor{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.insertingredient-inputt{
+    width: 100px;
+    padding: 10px;
+    font-size: 35px;
+    text-align: center;
+}
+.insertingredient-inputtt{
+    width: 100px;
+    padding: 18px;
+    font-size: 20px;
+    text-align: center;
+}
+.insertingredient-hr{
+    width: 40%;
+}
+.insertingredient-button{
+    width: 100px;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.insertingredient-button:hover{
+    transition: 0.3s;
+    width: 150px;
+}
+.insertingredient-button:not(:hover){
+    transition: 0.5s;
+}

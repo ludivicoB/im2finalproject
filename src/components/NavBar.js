@@ -21,7 +21,7 @@ function getPagePath(page) {
     case "Home":
       return "/home";
     case "Create Recipe":
-      return "/home";
+      return "/createRecipe";
     case "Display Recipe":
       return "/DisplayRecipe";
     case "Recipe List":

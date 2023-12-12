@@ -30,6 +30,7 @@ export default function RecipeList() {
               <RecipeCard
                 recipename={recipe.recipe_title}
                 description={recipe.recipe_description}
+                eventid={recipe.recipe_id}
                 key={index}
               />
             ))

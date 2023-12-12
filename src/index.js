@@ -10,6 +10,7 @@ import { UserProvider } from "./UserProvider";
 import UserProfile from "./inside/UserProfile";
 import RecipeList from "./inside/RecipeList";import DisplayRecipe from "./inside/DisplayRecipe";
 import EditRecipe from "./inside/EditRecipe";
+import EditIngredient from "./inside/EditIngredient";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,8 +24,9 @@ root.render(
           <Route path="/" element={<UserLogin />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/profile" element={<UserProfile />} />
-          <Route path="/DisplayRecipe" element={<DisplayRecipe />} />
-          <Route path="/EditRecipe" element={<EditRecipe />} />
+          <Route path="/DisplayRecipe/:recipeId" element={<DisplayRecipe />} />
+          <Route path="/EditRecipe/:recipeId" element={<EditRecipe />} />
+          <Route path="/EditIngredient/:recipeId/:ingredientId" element={<EditIngredient />} />
           <Route path="/recipelist" element={<RecipeList />} />
         </Routes>
       </UserProvider>

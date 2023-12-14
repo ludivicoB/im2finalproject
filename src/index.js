@@ -15,6 +15,7 @@ import EditIngredient from "./inside/EditIngredient";
 import CreateRecipe from "./inside/CreateRecipe";
 import InsertIngredient from "./inside/InsertIngredient";
 import InsertInstruction from "./inside/InsertInstruction";
+import EditInstruction from "./inside/EditInstruction";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -32,10 +33,9 @@ root.render(
           <Route path="/InsertInstruction" element={<InsertInstruction />} />
           <Route path="/DisplayRecipe/:recipeId" element={<DisplayRecipe />} />
           <Route path="/EditRecipe/:recipeId" element={<EditRecipe />} />
-          <Route
-            path="/EditIngredient/:recipeId/:ingredientId"
-            element={<EditIngredient />}
-          />
+          <Route path="/EditIngredient/:recipeId/:ingredientId" element={<EditIngredient />} />
+          <Route path="/EditInstruction/:recipeId/:instructionId" element={<EditInstruction />} />
+         
           <Route path="/recipelist" element={<RecipeList />} />
         </Routes>
       </UserProvider>

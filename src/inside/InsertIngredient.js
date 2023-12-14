@@ -8,6 +8,7 @@ import axios from "axios";
 export default function InsertIngredient() {
   const { recipe } = useUser();
   const navigate = useNavigate();
+  console.log("Recipe: ", recipe);
   const handleInsert = () => {
     const name = document.getElementById("ingredientname").value;
     const quantity = document.getElementById("quantity").value;
@@ -18,7 +19,7 @@ export default function InsertIngredient() {
     }
     axios
       .post("http://localhost:5000/recipe/ingredients", {
-        recipeid: recipe.id,
+        recipeid: recipe.recipe_id,
         name: name,
         quantity: quantity,
         measurement: measurement,

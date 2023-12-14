@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./InsertInstruction.css";
 import NavBar from "../components/NavBar";
 import { useUser } from "../UserProvider";
@@ -7,6 +7,7 @@ import axios from "axios";
 export default function InsertInstruction() {
   const { recipe } = useUser();
   const navigate = useNavigate();
+  console.log("Recipe: ", recipe);
   const handleInsert = () => {
     const stepnumber = document.getElementById("stepnumber").value;
     const description = document.getElementById("description").value;
@@ -16,7 +17,7 @@ export default function InsertInstruction() {
     }
     axios
       .post("http://localhost:5000/recipe/instructions", {
-        recipeid: recipe.id,
+        recipeid: recipe.recipe_id,
         stepnum: stepnumber,
         description: description,
       })
@@ -38,6 +39,24 @@ export default function InsertInstruction() {
       }, 1500);
     }
   };
+
+  const [instructions, setInstructions] = useState([]);
+
+  useEffect(() => {
+      axios
+          .get(`http://localhost:5000/recipes/instructions/${recipe.recipe_id}`)
+          .then((response) => {
+              const data = response.data;
+              console.log("Response", data);
+              // const instruction = data.find((instruction) => instruction.instruction_id == recipe.instructionId);
+              setInstructions(data);
+              console.log("Response Instructions", data);
+          })
+          .catch((error) => {
+              console.log(error);
+          });
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -51,6 +70,8 @@ export default function InsertInstruction() {
                 type="number"
                 className="insertinstruction-input"
                 id="stepnumber"
+                value={instructions.length + 1}
+                disabled
               />
             </div>
             <div className="insertinstruction-line">

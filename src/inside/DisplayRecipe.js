@@ -54,25 +54,29 @@ export default function DisplayRecipe() {
 
 
   return (
-    <div style={{ backgroundColor: "#F0D1C8" }}>
+    <div style={{}}>
       <NavBar />
       <br />
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" >
         <Grid container >
 
           <Grid container >
-            <Grid item xs={5.525} sx={{ textAlign: 'center', backgroundImage: "url('/images/img.png')", backgroundSize: 'auto', backgroundPositionX: 'center', backgroundPositionY: 'center', borderRadius: 10 }}>
+            <Grid item xs={5.545} sx={{ textAlign: 'center', backgroundImage: "url('/images/display.jpg')", backgroundSize: 'cover', backgroundPositionX: 'center', backgroundPositionY: 'center', borderRadius: 10 }}>
               {/* <h1>IMAGE</h1> */}
             </Grid>
-            <Grid item xs={.5} >
+            <Grid item xs={.1} >
             </Grid>
-            <Grid item xs={5.525} sx={{ backgroundColor: "#FFD8B1", borderRadius: 10 }}>
+            <Grid item xs={5.545} sx={{ backgroundColor: "#f9d8ba", borderRadius: 10, color: "#424242" }}>
               <div style={{ paddingLeft: 20 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
 
-                  <h3>RECIPE</h3>
+                  <h2 style={{ color: '#795548', marginBottom: "0rem" }}>RECIPE</h2>
                   <Link to={`/EditRecipe/${recipe_id.recipeId}`}><Button variant="contained" sx={{ margin: "10px", marginRight: "2rem" }}>EDIT</Button></Link>
                 </div>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <hr style={{ margin: '10px 0', borderColor: 'black', width: '100%', marginLeft: "auto", marginRight: "1rem" }} />
+                </div>
+
 
                 <div style={{ marginTop: "30px" }}>
                   <p style={{ fontSize: 20 }}><b>Title: </b>{recipes.recipe_title}</p>
@@ -83,8 +87,11 @@ export default function DisplayRecipe() {
                 </div>
 
                 <div style={{ paddingLeft: 20 }}>
-                  <h3>INGREDIENTS</h3>
-                  <div style={{ marginTop: "5px" }}>
+                  <h3 style={{ marginTop: "3rem", marginBottom: "0rem", color: '#795548' }}>INGREDIENTS</h3>
+                  <div >
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                      <hr style={{ margin: '10px 0', borderColor: 'black', width: '100%', marginLeft: "auto", marginRight: "3.5rem" }} />
+                    </div>
                     {ingredients.map((ingredient, index) => (
                       <div key={index} style={{ padding: 1, textAlign: "left" }}>
                         <p><b>Ingredient {index + 1}:</b> {ingredient.ingredient_name}  </p>
@@ -94,9 +101,13 @@ export default function DisplayRecipe() {
                     ))}
                   </div>
 
-                  <div>
-                    <h3>STEPS</h3>
-                    <div style={{ marginTop: "30px" }}>
+                  <div style={{ marginBottom: "2rem" }}>
+                    <h3 style={{ marginTop: "3rem", marginBottom: "0rem", color: '#795548' }}>STEPS</h3>
+                    <div >
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <hr style={{ margin: '10px 0', borderColor: 'black', width: '100%', marginLeft: "auto", marginRight: "3.5rem" }} />
+                      </div>
+
                       {instructions.map((instruction, index) => (
                         <div key={index}>
                           <p><b>Step {instruction.step_number}:</b> {instruction.step_instruction}</p>
@@ -112,37 +123,6 @@ export default function DisplayRecipe() {
               </div>
             </Grid>
           </Grid>
-          {/* <Grid container >
-            <Grid item xs={3} sx={{ border: '1px solid black' }}>
-              <div style={{ paddingLeft: 20 }}>
-                <h3>INGREDIENTS</h3>
-                <div style={{ marginTop: "5px" }}>
-                  {ingredients.map((ingredient, index) => (
-                    <div key={index} style={{ padding: 1, textAlign: "left" }}>
-                      <p><b>Ingredient {index + 1}:</b> {ingredient.ingredient_name}  </p>
-                      <p><b>Quantity:</b> {ingredient.ingredient_quantity}</p>
-                      <p><b>Measurement:</b> {ingredient.ingredient_measurement}</p>
-                    </div>
-                  ))}
-                </div>
-
-              </div>
-            </Grid>
-            <Grid item xs={9} sx={{ border: '1px solid black' }}>
-              <div style={{ paddingLeft: 20 }}>
-                <h3>STEPS</h3>
-                <div style={{ marginTop: "30px" }}>
-                  {instructions.map((instruction, index) => (
-                    <div key={index}>
-                      <p><b>Step {instruction.step_number}:</b> {instruction.step_instruction}</p>
-                    </div>
-                  ))}
-
-                </div>
-
-              </div>
-            </Grid>
-          </Grid> */}
         </Grid>
       </Container>
       <br />

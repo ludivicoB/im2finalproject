@@ -75,9 +75,10 @@ export default function EditRecipe() {
       });
   }
   return (
-    <>
+    <div>
       <NavBar />
-      <Container maxWidth="md">
+      <br />
+      <Container maxWidth="md" sx={{ backgroundColor: "#F0D1C8", borderRadius: '10px' }}>
         <br />
         <Grid container sx={{ border: '1px solid black', marginBottom: '2rem' }}>
 
@@ -87,20 +88,15 @@ export default function EditRecipe() {
                 <h1 style={{ fontStyle: 'italic', textTransform: 'uppercase' }}>{recipes.recipe_title}</h1>
                 <p style={{ fontSize: '20px' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{recipes.recipe_description}</p>
               </div>
-
-
-
-
               <Grid container>
-                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <h3 style={{ marginLeft: '10rem' }}>INGREDIENTS</h3>
-                <Link to="/InsertIngredient"><Button 
-                style={{ marginLeft: '2rem', padding: 0, height: '2rem', fontSize: '25px' }} 
-                variant="contained" 
-                onClick={() => {holdRecipe(recipes)}}>&#43;</Button></Link>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ marginLeft: '10rem' }}>INGREDIENTS</h3>
+                  <Link to="/InsertIngredient"><Button
+                    style={{ marginLeft: '2rem', padding: 0, height: '2rem', fontSize: '25px' }}
+                    variant="contained"
+                    onClick={() => { holdRecipe(recipes) }}>&#43;</Button></Link>
                 </div>
- 
-                
+
                 {ingredients.map((ingredient, index) => (
                   <Grid item xs={10} key={index} sx={{ border: '1px solid black', margin: '10px auto' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -117,31 +113,31 @@ export default function EditRecipe() {
                         <h3 style={{ marginBottom: '0' }}>Measurement</h3>
                         <p style={{ fontSize: '20px' }}>{ingredient.ingredient_measurement}</p>
                       </div>
-                      <div style={{display: "flex", justifyContent: "flex-end"}}>
-                      <Link to={`/EditIngredient/${recipe_id.recipeId}/${ingredient.ingredient_id}`}><Button variant="contained" sx={{ display: 'flex', marginRight: '1rem', padding: 0, height: '2rem' }}>Edit</Button></Link>
-                      <Button variant="contained" sx={{ display: 'flex', marginRight: '2rem', padding: 0, height: '2rem' }} onClick={() => handleDeleteIngre(ingredient.ingredient_id)}>Delete</Button>
+                      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <Link to={`/EditIngredient/${recipe_id.recipeId}/${ingredient.ingredient_id}`}><Button variant="contained" sx={{ display: 'flex', marginRight: '1rem', padding: 0, height: '2rem' }}>Edit</Button></Link>
+                        <Button variant="contained" sx={{ display: 'flex', marginRight: '2rem', padding: 0, height: '2rem' }} onClick={() => handleDeleteIngre(ingredient.ingredient_id)}>Delete</Button>
                       </div>
 
                     </div>
 
                   </Grid>
                 ))}
-                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <h3 style={{ marginLeft: '10rem', marginTop: '2rem' }}>INSTRUCTIONS</h3>
-                <Link to="/InsertInstruction"><Button 
-                style={{ marginLeft: '2rem', padding: 0, height: '2rem', fontSize: '25px' }} 
-                variant="contained" 
-                onClick={() => {holdRecipe(recipes)}}>&#43;</Button></Link>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ marginLeft: '10rem', marginTop: '2rem' }}>INSTRUCTIONS</h3>
+                  <Link to="/InsertInstruction"><Button
+                    style={{ marginLeft: '2rem', padding: 0, height: '2rem', fontSize: '25px' }}
+                    variant="contained"
+                    onClick={() => { holdRecipe(recipes) }}>&#43;</Button></Link>
                 </div>
                 {instructions.map((instruction, index) => (
                   <Grid item xs={10} key={index} sx={{ border: '1px solid black', margin: '10px auto' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <p style={{ marginLeft: '1rem', fontSize: '20px' }}><b>{instruction.step_number}</b>: {instruction.step_instruction}</p>
-                      <div style={{display: "flex", justifyContent: "flex-end"}}>
-                      <Link to={`/EditInstruction/${recipe_id.recipeId}/${instruction.instruction_id}`}><Button variant="contained" sx={{ display: 'flex', marginRight: '1rem', padding: 0, height: '2rem' }}>Edit</Button></Link>
-                      <Button variant="contained" sx={{ display: 'flex', marginRight: '2rem', padding: 0, height: '2rem' }} onClick={() => handleDeleteInstruct(instruction.instruction_id)}>Delete</Button>
+                      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <Link to={`/EditInstruction/${recipe_id.recipeId}/${instruction.instruction_id}`}><Button variant="contained" sx={{ display: 'flex', marginRight: '1rem', padding: 0, height: '2rem' }}>Edit</Button></Link>
+                        <Button variant="contained" sx={{ display: 'flex', marginRight: '2rem', padding: 0, height: '2rem' }} onClick={() => handleDeleteInstruct(instruction.instruction_id)}>Delete</Button>
                       </div>
-                      
+
                     </div>
 
                   </Grid>
@@ -154,6 +150,6 @@ export default function EditRecipe() {
 
         </Grid>
       </Container>
-    </>
+    </div>
   )
 }

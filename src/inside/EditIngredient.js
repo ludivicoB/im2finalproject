@@ -73,29 +73,13 @@ export default function EditIngredient() {
 
     console.log("Ingredients: ", ingredients.ingredient_id);
 
-    // const handleUpdateProfile = async () => {
-    //     try {
-
-    //         const response = await axios.put(`http://localhost:5000/recipes/ingredients/${ingredients.ingredient_id}`, {
-    //             recipe_id: formData.recipe_id,
-    //             name: formData.name,
-    //             quantity: formData.quantity,
-    //             measurement: formData.measurement,
-    //         });
-
-    //         alert('Profile updated successfully!');
-    //     } catch (error) {
-    //         console.error('Error updating user profile:', error);
-    //     }
-    // };
-
     return (
         <>
             <NavBar />
             <br />
             <Container maxWidth="md">
                 {/* <h1>{ingredients.ingredient_name}</h1> */}
-                <Grid container sx={{ border: '1px solid black' }}>
+                <Grid container sx={{ border: '1px solid black', backgroundColor: "#F0D1C8", borderRadius: '10px' }}>
 
                     <Grid container sx={{ border: '1px solid black', padding: '10px', margin: '20px' }}>
                         <Grid item xs={12}>

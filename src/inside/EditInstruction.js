@@ -94,7 +94,7 @@ export default function EditInstruction() {
             <br />
             <Container maxWidth="md">
                 {/* <h1>{ingredients.ingredient_name}</h1> */}
-                <Grid container sx={{ border: '1px solid black' }}>
+                <Grid container sx={{ border: '1px solid black', backgroundColor: "#F0D1C8", borderRadius: '10px' }}>
 
                     <Grid container sx={{ border: '1px solid black', padding: '10px', margin: '20px' }}>
                         <Grid item xs={12}>

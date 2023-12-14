@@ -71,7 +71,7 @@ export default function DisplayRecipe() {
                 <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
 
                   <h3>RECIPE</h3>
-                  <Link to={`/EditRecipe/${recipe_id.recipeId}`}><Button variant="contained" sx={{ margin: "10px" }}>EDIT</Button></Link>
+                  <Link to={`/EditRecipe/${recipe_id.recipeId}`}><Button variant="contained" sx={{ margin: "10px", marginRight: "2rem" }}>EDIT</Button></Link>
                 </div>
 
                 <div style={{ marginTop: "30px" }}>

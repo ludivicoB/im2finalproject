@@ -24,7 +24,13 @@ export default function RecipeCard(props) {
   };
   console.log("props: ", props);
   return (
-    <Card sx={{ maxWidth: 345, margin: "10px", border: "1px solid black" }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        margin: "10px",
+        backgroundColor: "#FFE1A6",
+      }}
+    >
       <button
         className="deletebtn"
         title="delete recipe?"
@@ -32,24 +38,30 @@ export default function RecipeCard(props) {
       >
         X
       </button>
-      <CardHeader title={props.recipename} />
-      <CardMedia
-        component="img"
-        height="194"
-        image="/images/img.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <div className="viewbtn-container" style={{ textAlign: "center" }}>
-        <Link to={`/DisplayRecipe/${props.eventid}`}>
-          <button className="viewbtn" style={{ margin: "10px" }}>
-            View
-          </button>
-        </Link>
+      <div>
+        <CardHeader title={props.recipename} sx={{ textAlign: "center" }} />
+        <CardMedia
+          component="img"
+          height="194"
+          image="/images/img.png"
+          alt="Paella dish"
+        />
+        <CardContent>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ textAlign: "center" }}
+          >
+            {props.description}
+          </Typography>
+        </CardContent>
+        <div className="viewbtn-container" style={{ textAlign: "center" }}>
+          <Link to={`/DisplayRecipe/${props.eventid}`}>
+            <button className="viewbtn" style={{ margin: "10px" }}>
+              View
+            </button>
+          </Link>
+        </div>
       </div>
     </Card>
   );

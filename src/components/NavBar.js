@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import "./ComponentStyle.css";
 import { Link } from "react-router-dom";
 import { useUser } from "../UserProvider";
 const pages = ["Create Recipe", "Recipe List", "Home"];
@@ -67,7 +68,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ background: "white" }}>
+    <AppBar position="static" sx={{ background: "#231F47" }}>
       <Container maxWidth="lg">
         <Toolbar>
           <Typography
@@ -81,7 +82,7 @@ function NavBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "black",
+              color: "white",
               textDecoration: "none",
             }}
           >
@@ -120,7 +121,9 @@ function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" sx={{ color: "white" }}>
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -138,14 +141,18 @@ function NavBar() {
             }}
           >
             {pages.map((page) => (
-              <Link sx={{ textDecoration: "none" }} to={getPagePath(page)}>
+              <Link
+                sx={{ textDecoration: "none", color: "white" }}
+                to={getPagePath(page)}
+                className="nav-link"
+              >
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   // Adjust the 'left here'
                   sx={{
                     my: 2,
-                    color: "black",
+                    color: "white",
                     display: "flex",
                     left: "0rem",
                     fontSize: "small",
@@ -164,6 +171,7 @@ function NavBar() {
                 <Avatar
                   alt={user.firstname}
                   src="/static/images/avatar/2.jpg"
+                  sx={{ backgroundColor: "#89A4C3" }}
                 />
               </IconButton>
             </Tooltip>

@@ -8,3 +8,8 @@
     padding-bottom: 10px;
 }
 
+.recipelist-container{
+    display: flex;
+    justify-content: center;
+    
+}

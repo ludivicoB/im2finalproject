@@ -6,10 +6,32 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import "./ComponentStyle.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 export default function RecipeCard(props) {
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:5000/recipes/${props.eventid}`)
+      .then((response) => {
+        console.log(response.data);
+        alert("Recipe deleted successfully!");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   console.log("props: ", props);
   return (
-    <Card sx={{ maxWidth: 345, margin: "10px" }}>
+    <Card sx={{ maxWidth: 345, margin: "10px", border: "1px solid black" }}>
+      <button
+        className="deletebtn"
+        title="delete recipe?"
+        onClick={handleDelete}
+      >
+        X
+      </button>
       <CardHeader title={props.recipename} />
       <CardMedia
         component="img"
@@ -24,9 +46,9 @@ export default function RecipeCard(props) {
       </CardContent>
       <div className="viewbtn-container" style={{ textAlign: "center" }}>
         <Link to={`/DisplayRecipe/${props.eventid}`}>
-        <button className="viewbtn" style={{ margin: "10px" }}>
-          View
-        </button>
+          <button className="viewbtn" style={{ margin: "10px" }}>
+            View
+          </button>
         </Link>
       </div>
     </Card>

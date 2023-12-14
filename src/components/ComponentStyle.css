@@ -16,3 +16,8 @@
 .viewbtn:not(:hover){
     transition: 0.5s;
 }
+.deletebtn{
+    float: right;
+    cursor: pointer;
+    margin: 5px;
+}

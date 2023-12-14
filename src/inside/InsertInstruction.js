@@ -11,13 +11,14 @@ export default function InsertInstruction() {
   const handleInsert = () => {
     const stepnumber = document.getElementById("stepnumber").value;
     const description = document.getElementById("description").value;
+    const resID = recipe.id ? recipe.id : recipe.recipe_id;
     if (stepnumber === "" || description === "") {
       alert("Please fill all the fields");
       return;
     }
     axios
       .post("http://localhost:5000/recipe/instructions", {
-        recipeid: recipe.recipe_id,
+        recipeid: resID,
         stepnum: stepnumber,
         description: description,
       })
@@ -43,8 +44,9 @@ export default function InsertInstruction() {
   const [instructions, setInstructions] = useState([]);
 
   useEffect(() => {
+    const resID = recipe.id ? recipe.id : recipe.recipe_id;
     axios
-      .get(`http://localhost:5000/recipes/instructions/${recipe.recipe_id}`)
+      .get(`http://localhost:5000/recipes/instructions/${resID}`)
       .then((response) => {
         const data = response.data;
         console.log("Response", data);

@@ -13,13 +13,14 @@ export default function InsertIngredient() {
     const name = document.getElementById("ingredientname").value;
     const quantity = document.getElementById("quantity").value;
     const measurement = document.getElementById("measurement").value;
+    const resID = recipe.id ? recipe.id : recipe.recipe_id;
     if (name === "" || quantity === "" || measurement === "") {
       alert("Please fill all the fields");
       return;
     }
     axios
       .post("http://localhost:5000/recipe/ingredients", {
-        recipeid: recipe.recipe_id,
+        recipeid: resID,
         name: name,
         quantity: quantity,
         measurement: measurement,

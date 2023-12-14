@@ -60,6 +60,8 @@ export default function UserLogin() {
       <div className="container">
         <div className="flexcenter">
           <div className="box">
+            <img src="/images/appname.png" className="logo"></img>
+            <br />
             <InputBox idname="email" inputname="Email" inputtype="text" />
             <br />
             <InputBox

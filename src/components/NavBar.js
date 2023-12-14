@@ -86,8 +86,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            {/* <img src="/img/citlogo.png" alt="logo" className='logo'  /> */}
-            <h4>App Name</h4>
+            <img src="/images/appname.png" alt="logo" className="applogo" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

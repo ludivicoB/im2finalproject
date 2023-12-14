@@ -55,6 +55,8 @@ function UserRegister() {
       <div className="container">
         <div className="flexcenter">
           <div className="box">
+            <img src="./images/appname.png" className="logo" />
+            <br />
             <InputBox
               idname="firstname"
               inputname="Firstname"

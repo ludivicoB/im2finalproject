@@ -43,50 +43,53 @@ export default function InsertInstruction() {
   const [instructions, setInstructions] = useState([]);
 
   useEffect(() => {
-      axios
-          .get(`http://localhost:5000/recipes/instructions/${recipe.recipe_id}`)
-          .then((response) => {
-              const data = response.data;
-              console.log("Response", data);
-              // const instruction = data.find((instruction) => instruction.instruction_id == recipe.instructionId);
-              setInstructions(data);
-              console.log("Response Instructions", data);
-          })
-          .catch((error) => {
-              console.log(error);
-          });
+    axios
+      .get(`http://localhost:5000/recipes/instructions/${recipe.recipe_id}`)
+      .then((response) => {
+        const data = response.data;
+        console.log("Response", data);
+        // const instruction = data.find((instruction) => instruction.instruction_id == recipe.instructionId);
+        setInstructions(data);
+        console.log("Response Instructions", data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
     <>
       <NavBar />
       <div className="insertinstruction-body">
-        <div className="insertinstruction-form-container">
-          <h1 className="insertinstruction-title">Insert an Instruction</h1>
-          <div className="insertinstruction-line">
+        <div className="insertinstruction-mid">
+          <div className="insertinstruction-form-container">
+            <h1 className="insertinstruction-title">Insert an Instruction</h1>
+            <hr className="insertinstruction-hr" />
             <div className="insertinstruction-line">
-              <p>Step Number</p>
-              <input
-                type="number"
-                className="insertinstruction-input"
-                id="stepnumber"
-                value={instructions.length + 1}
-                disabled
-              />
+              <div className="insertinstruction-line">
+                <p>Step Number</p>
+                <input
+                  type="number"
+                  className="insertinstruction-input"
+                  id="stepnumber"
+                  value={instructions.length + 1}
+                  disabled
+                />
+              </div>
+              <div className="insertinstruction-line">
+                <p>Description</p>
+                <textarea
+                  type="text"
+                  className="insertinstruction-inputt"
+                  id="description"
+                />
+              </div>
             </div>
-            <div className="insertinstruction-line">
-              <p>Description</p>
-              <textarea
-                type="text"
-                className="insertinstruction-inputt"
-                id="description"
-              />
-            </div>
+            <hr className="insertinstruction-hr" />
+            <button className="insertinstruction-button" onClick={handleInsert}>
+              Add Instruction
+            </button>
           </div>
-          <hr className="insertinstruction-hr" />
-          <button className="insertinstruction-button" onClick={handleInsert}>
-            Add Instruction
-          </button>
         </div>
       </div>
     </>

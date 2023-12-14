@@ -23,6 +23,7 @@ export default function RecipeList() {
   return (
     <>
       <NavBar />
+      <h1 className="recipelist-title">YOUR RECIPES</h1>
       <div className="recipelist-body">
         <div className="recipelist-container">
           {recipes.length > 0 ? (

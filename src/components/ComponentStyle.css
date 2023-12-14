@@ -17,6 +17,11 @@
     width: 150px;
 
 }
+.applogo{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 .viewbtn:not(:hover){
     transition: 0.5s;
 }

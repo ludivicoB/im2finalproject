@@ -44,39 +44,47 @@ export default function InsertIngredient() {
   };
   return (
     <>
-      <NavBar />
       <div className="insertingredient-body">
-        <h1 className="insertingredient-title">Insert an Ingredient</h1>
-        <div className="insertingredient-form-container">
-          <p className="insertingredient-label">Ingredient Name</p>
-          <input
-            type="text"
-            className="insertingredient-input"
-            placeholder="Name of Ingredient"
-            id="ingredientname"
-          ></input>
-          <div className="insertingredient-input-twor">
-            <div>
-              <p className="insertingredient-label">Quantity</p>
-              <input
-                type="number"
-                className="insertingredient-inputt"
-                id="quantity"
-              ></input>
-            </div>
-            <div>
-              <p className="insertingredient-label">Measurement</p>
+        <NavBar />
+        <div className="insertingredient-mid">
+          <div className="insertingredient-container">
+            <h1 className="insertingredient-title">Insert an Ingredient</h1>
+            <hr className="insertingredient-hr" />
+            <div className="insertingredient-form-container">
+              <p className="insertingredient-label">Ingredient Name</p>
               <input
                 type="text"
-                className="insertingredient-inputtt"
-                id="measurement"
+                className="insertingredient-input"
+                placeholder="Name of Ingredient"
+                id="ingredientname"
               ></input>
+              <div className="insertingredient-input-twor">
+                <div>
+                  <p className="insertingredient-label">Quantity</p>
+                  <input
+                    type="number"
+                    className="insertingredient-inputt"
+                    id="quantity"
+                  ></input>
+                </div>
+                <div>
+                  <p className="insertingredient-label">Measurement</p>
+                  <input
+                    type="text"
+                    className="insertingredient-inputtt"
+                    id="measurement"
+                  ></input>
+                </div>
+              </div>
+              <hr className="insertingredient-hr" />
+              <button
+                className="insertingredient-button"
+                onClick={handleInsert}
+              >
+                Insert
+              </button>
             </div>
           </div>
-          <hr className="insertingredient-hr" />
-          <button className="insertingredient-button" onClick={handleInsert}>
-            Insert
-          </button>
         </div>
       </div>
     </>

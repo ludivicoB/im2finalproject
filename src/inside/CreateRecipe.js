@@ -53,6 +53,7 @@ export default function CreateRecipe() {
       <div className="createrecipe-body">
         <div className="createrecipe-container">
           <h1 className="createrecipe-title">Create Recipe</h1>
+          <hr />
           <div className="createrecipe-form-container">
             <p className="createrecipe-label">Recipe Name</p>
             <input

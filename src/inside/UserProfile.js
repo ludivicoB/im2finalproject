@@ -44,42 +44,47 @@ export default function UserProfile() {
   return (
     <>
       <NavBar />
-      <div className="userprofile-container">
-        <div className="row">
-          <p>Firstname</p>
-          <input className="info-box" value={user.firstname} readOnly></input>
-        </div>
-        <div className="row">
-          <p>Lastname</p>
-          <input className="info-box" value={user.lastname} readOnly></input>
-        </div>
-        <div className="row">
-          <p>Email</p>
-          <input className="info-box" value={user.email} readOnly></input>
-        </div>
-        <div className="row">
-          <p>Password</p>
-          <input
-            id="userprofile-input-password"
-            className="info-box"
-            value={defaultPass}
-            type="password"
-            onChange={(e) => setDefaultPass(e.target.value)}
-            disabled
-          ></input>
-          <img
-            className="userprofile-changebtn"
-            src="/images/editbtn.png"
-            title="Change Password?"
-            alt="Change Password"
-            onClick={toggleEditPass}
-          ></img>
-        </div>
-        <div className="row">
-          <br />
-          <button className="savebtn" onClick={handleSavePassword}>
-            Save
-          </button>
+      <div className="userprofile-wrapper">
+        <div className="userprofile-container">
+          <h1 className="userprofile-title">User Profile</h1>
+          <hr />
+          <div className="row">
+            <p>Firstname</p>
+            <input className="info-box" value={user.firstname} readOnly></input>
+          </div>
+          <div className="row">
+            <p>Lastname</p>
+            <input className="info-box" value={user.lastname} readOnly></input>
+          </div>
+          <div className="row">
+            <p>Email</p>
+            <input className="info-box" value={user.email} readOnly></input>
+          </div>
+          <div className="row">
+            <p>Password</p>
+            <input
+              id="userprofile-input-password"
+              className="info-box"
+              value={defaultPass}
+              type="password"
+              onChange={(e) => setDefaultPass(e.target.value)}
+              disabled
+            ></input>
+            <img
+              className="userprofile-changebtn"
+              src="/images/editbtn.png"
+              title="Change Password?"
+              alt="Change Password"
+              onClick={toggleEditPass}
+            ></img>
+          </div>
+          <div className="row">
+            <br />
+            <hr />
+            <button className="savebtn" onClick={handleSavePassword}>
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </>

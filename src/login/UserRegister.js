@@ -74,7 +74,7 @@ function UserRegister() {
             />
             <br />
             <button className="create" onClick={() => navigate("/")}>
-              Signup
+              Login
             </button>
             <br />
             <ButtonComp buttonname="Register" click={signup} />

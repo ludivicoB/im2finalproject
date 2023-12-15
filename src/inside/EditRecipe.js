@@ -132,7 +132,7 @@ export default function EditRecipe() {
                 {instructions.map((instruction, index) => (
                   <Grid item xs={10} key={index} sx={{ border: '1px solid black', margin: '10px auto' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <p style={{ marginLeft: '1rem', fontSize: '20px' }}><b>{instruction.step_number}</b>: {instruction.step_instruction}</p>
+                      <p style={{ marginLeft: '1rem', fontSize: '20px', marginRight: '1rem' }}><b>{instruction.step_number}</b>: {instruction.step_instruction}</p>
                       <div style={{ display: "flex", justifyContent: "flex-end" }}>
                         <Link to={`/EditInstruction/${recipe_id.recipeId}/${instruction.instruction_id}`}><Button variant="contained" sx={{ display: 'flex', marginRight: '1rem', padding: 0, height: '2rem' }}>Edit</Button></Link>
                         <Button variant="contained" sx={{ display: 'flex', marginRight: '2rem', padding: 0, height: '2rem' }} onClick={() => handleDeleteInstruct(instruction.instruction_id)}>Delete</Button>

@@ -109,7 +109,7 @@ export default function DisplayRecipe() {
                       </div>
 
                       {instructions.map((instruction, index) => (
-                        <div key={index}>
+                        <div key={index} style={{paddingRight: 55}}>
                           <p><b>Step {instruction.step_number}:</b> {instruction.step_instruction}</p>
                         </div>
                       ))}

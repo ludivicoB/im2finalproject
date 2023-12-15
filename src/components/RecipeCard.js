@@ -8,9 +8,24 @@ import "./ComponentStyle.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 export default function RecipeCard(props) {
+  // const handleDelete = () => {
+  //   axios
+  //     .delete(`http://localhost:5000/recipes/${props.eventid}`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       alert("Recipe deleted successfully!");
+  //       setTimeout(() => {
+  //         window.location.reload();
+  //       }, 1000);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:5000/recipes/${props.eventid}`)
+      .delete(`http://localhost:5000/recipes/delete/${props.eventid}`)
       .then((response) => {
         console.log(response.data);
         alert("Recipe deleted successfully!");
